@@ -5,30 +5,56 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#666666"
-    app:layoutDescription="@xml/scene_14"
+    app:layoutDescription="@xml/scene"
     app:showPaths="true">
 
     <FrameLayout
         android:id="@+id/topFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <include layout="@layout/activity_scrolling" />
-    </FrameLayout>
+        android:layout_height="match_parent"
+        android:elevation="2dp" />
 
     <FrameLayout
         android:id="@+id/bottomFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:elevation="2dp" />
 
-        <include layout="@layout/fragment_busket" />
+    <FrameLayout
+        android:id="@+id/basketItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="0dp">
+
+        <View
+            android:id="@+id/ivF"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="top|start"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/bg_mock_image" />
+
+        <androidx.constraintlayout.utils.widget.MockView
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_gravity="end"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="20dp" />
     </FrameLayout>
+
+    <FrameLayout
+        android:id="@+id/productItem"
+        android:layout_width="match_parent"
+        android:layout_height="500dp"
+        android:elevation="3dp"
+        android:background="@android:color/darker_gray" />
 
     <Space
         android:id="@+id/bottomSpace"
         android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:layout_marginBottom="70dp"
+        android:layout_marginBottom="80dp"
         app:layout_constraintBottom_toBottomOf="parent" />
 
     <Space

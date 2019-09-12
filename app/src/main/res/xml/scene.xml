@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<MotionScene
+    motion:defaultDuration="1000"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:motion="http://schemas.android.com/apk/res-auto">
+
+
+    <ConstraintSet android:id="@+id/basketItemHidden">
+        <Constraint
+            android:id="@id/topFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+        <Constraint
+            android:id="@id/basketItem"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_marginTop="80dp"
+            motion:layout_constraintTop_toBottomOf="@id/bottomSpace" />
+
+        <Constraint
+            android:id="@id/bottomFrame"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="80dp"
+            motion:layout_constraintTop_toBottomOf="@id/bottomSpace" />
+
+        <Constraint
+            android:id="@+id/productItem"
+            android:visibility="invisible"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            motion:layout_constraintVertical_bias="0.3"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toTopOf="parent" />
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/basketItemShown">
+        <Constraint
+            android:id="@id/topFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toTopOf="@+id/bottomSpace"
+            motion:layout_constraintTop_toTopOf="parent"/>
+        <Constraint
+            android:id="@id/basketItem"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            motion:layout_constraintBottom_toBottomOf="parent" />
+        <Constraint
+            android:id="@id/bottomFrame"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:layout_marginTop="80dp"
+            motion:layout_constraintTop_toBottomOf="@id/bottomSpace" />
+
+        <Constraint
+            android:id="@+id/productItem"
+            android:layout_marginStart="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.0"
+            android:rotation="90"
+            android:scaleY="0.0"
+            android:layout_marginBottom="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+    </ConstraintSet>
+
+    <ConstraintSet android:id="@+id/basketShown">
+        <Constraint
+            android:id="@id/topFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:scaleX="0.95"
+            android:scaleY="0.95"
+            motion:layout_constraintBottom_toTopOf="@id/topSpace" />
+
+        <Constraint
+            android:id="@id/basketItem"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:scaleX="0.9"
+            android:scaleY="0.9"
+            android:visibility="invisible"
+            motion:layout_constraintBottom_toBottomOf="@+id/topFrame" />
+
+        <Constraint
+            android:id="@id/bottomFrame"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/topSpace" />
+
+        <Constraint
+            android:id="@+id/productItem"
+            android:layout_marginStart="20dp"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:scaleX="0.0"
+            android:scaleY="0.0"
+            android:visibility="invisible"
+            android:layout_marginBottom="10dp"
+            motion:layout_constraintBottom_toBottomOf="parent"
+            motion:layout_constraintStart_toStartOf="parent" />
+
+    </ConstraintSet>
+
+    <Transition
+        motion:constraintSetEnd="@+id/basketShown"
+        motion:constraintSetStart="@+id/basketItemShown"
+        motion:duration="200"
+        motion:motionInterpolator="linear">
+
+        <OnSwipe
+            motion:dragDirection="dragUp"
+            motion:touchAnchorId="@id/basketItem"
+            motion:touchRegionId="@id/basketItem" />
+    </Transition>
+
+    <Transition
+        motion:constraintSetEnd="@id/basketItemShown"
+        motion:constraintSetStart="@id/basketItemHidden"
+        motion:duration="300"/>
+
+
+
+</MotionScene>
