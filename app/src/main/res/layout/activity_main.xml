@@ -43,13 +43,6 @@
             android:layout_marginEnd="20dp" />
     </FrameLayout>
 
-    <FrameLayout
-        android:id="@+id/productItem"
-        android:layout_width="match_parent"
-        android:layout_height="500dp"
-        android:elevation="3dp"
-        android:background="@android:color/darker_gray" />
-
     <Space
         android:id="@+id/bottomSpace"
         android:layout_width="match_parent"
