@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/productDetailMotionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -18,9 +17,7 @@
         android:id="@+id/content"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@drawable/bg_content"
         android:clipToPadding="false"
-        android:fitsSystemWindows="false"
         android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -134,7 +131,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:mock_diagonalsColor="#FFF"
-                app:mock_showLabel="false"/>
+                app:mock_showLabel="false" />
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBuy"
@@ -157,13 +154,13 @@
 
             <include
                 android:id="@+id/reviewsComponent"
-                app:layout_constraintTop_toBottomOf="@+id/productColorOne"
-                android:layout_marginTop="16dp"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
+                layout="@layout/component_list_items"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                layout="@layout/component_list_items"/>
+                android:layout_marginTop="16dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/productColorOne" />
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
