@@ -17,7 +17,7 @@ class MainActivity : AppCompatActivity() {
             outlineProvider = object : ViewOutlineProvider() {
                 override fun getOutline(view: View?, outline: Outline?) {
                     if (view != null && outline != null) {
-                        outline.setRoundRect(0, 0, view.width, view.height, dpToPx(20f).toFloat())
+                        outline.setRoundRect(0, -dpToPx(20f), view.width, view.height, dpToPx(20f).toFloat())
                     }
                 }
             }
