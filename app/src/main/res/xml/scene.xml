@@ -24,6 +24,14 @@
             android:layout_height="500dp"
             android:layout_marginTop="80dp"
             motion:layout_constraintTop_toBottomOf="@id/bottomSpace" />
+
+        <Constraint android:id="@+id/vTopLine"
+            android:layout_width="40dp"
+            android:layout_marginTop="6dp"
+            android:layout_height="4dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintTop_toBottomOf="@id/bottomSpace" />
     </ConstraintSet>
 
     <ConstraintSet android:id="@+id/basketItemShown">
@@ -72,6 +80,12 @@
             motion:layout_constraintBottom_toBottomOf="parent"
             motion:layout_constraintTop_toBottomOf="@id/topSpace" />
 
+        <Constraint android:id="@+id/vTopLine"
+            android:layout_width="40dp"
+            android:layout_height="4dp"
+            motion:layout_constraintEnd_toEndOf="parent"
+            motion:layout_constraintStart_toStartOf="parent"
+            motion:layout_constraintBottom_toTopOf="@id/topSpace" />
     </ConstraintSet>
 
     <Transition

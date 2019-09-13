@@ -19,4 +19,12 @@ class MainActivity : AppCompatActivity() {
                 .commit()
         }
     }
+
+    override fun onBackPressed() {
+        if (motionLayout?.currentState == R.id.basketShown) {
+            motionLayout?.transitionToState(R.id.basketItemShown)
+        } else {
+            super.onBackPressed()
+        }
+    }
 }
