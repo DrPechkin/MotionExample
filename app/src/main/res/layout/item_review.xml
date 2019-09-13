@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/bg_item_review"
+    android:paddingStart="20dp"
+    android:paddingEnd="20dp"
+    android:paddingTop="20dp">
+
+    <View
+        android:id="@+id/divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:layout_marginTop="20dp"
+        android:background="#ccc"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewDate" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="13:47 14 Май 2019"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewAuthor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewStars"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:drawableEnd="@drawable/ic_star_black_24dp"
+        android:drawablePadding="8dp"
+        android:text="5"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@+id/tvReviewDate"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/tvReviewAuthor" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewAuthor"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-medium"
+        android:text="Татьяна"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewProductSizeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:text="Размер"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/divider" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewProductSizeValue"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="39"
+        android:textColor="@android:color/black"
+        app:layout_constraintBaseline_toBaselineOf="@+id/tvReviewProductSizeLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewProductColorLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="Цвет"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewProductSizeLabel" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewProductColorValue"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Черный"
+        android:textColor="@android:color/black"
+        app:layout_constraintBaseline_toBaselineOf="@id/tvReviewProductColorLabel"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatTextView
+        android:id="@+id/tvReviewDescription"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:ellipsize="end"
+        android:fontFamily="sans-serif"
+        android:layout_marginBottom="32dp"
+        android:lineSpacingExtra="5dp"
+        android:text="Кросовки из натуральной кожи однозначно, внешние срезы не спрятаны и по ним все видно. На 39 идеально сели в 39 размере, на мою ногу средней полноты очень хорошо, колодка удобная, понравилось оформеление верха, ногу обнимают, очень комфортна высокая пятка. Резинки убрала сразу, вдела обычные шнурки, люблю когда нога хорошо зафиксирована. Качество исполнения без претензий, по внешним парметрам из многих выбрала именно эту модель, смотрится просто и со вкусом б люблю простоту. Надеюсь носиться будет хорошо."
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvReviewProductColorLabel" />
+</androidx.constraintlayout.widget.ConstraintLayout>
