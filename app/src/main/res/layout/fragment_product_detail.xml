@@ -18,7 +18,9 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@drawable/bg_content"
+        android:clipToPadding="false"
         android:fitsSystemWindows="false"
+        android:paddingBottom="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -28,20 +30,85 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productColorOne"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_mock_image"
+                android:backgroundTint="#cccccc"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productColorsLabel" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productColorTwo"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_mock_image"
+                android:backgroundTint="#cccccc"
+                app:layout_constraintStart_toEndOf="@id/productColorOne"
+                app:layout_constraintTop_toBottomOf="@id/productColorsLabel" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/productColorThird"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/bg_mock_image"
+                android:backgroundTint="#cccccc"
+                app:layout_constraintStart_toEndOf="@id/productColorTwo"
+                app:layout_constraintTop_toBottomOf="@id/productColorsLabel" />
+
             <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productName"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom|center"
                 android:layout_marginStart="20dp"
                 android:layout_marginTop="10dp"
                 android:layout_marginEnd="20dp"
+                android:fontFamily="sans-serif-medium"
                 android:text="Alissio Nesca"
                 android:textColor="@android:color/black"
                 android:textSize="18sp"
-                android:fontFamily="sans-serif-medium"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/btnBuy" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productDescription"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom|center"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="4dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="sans-serif-medium"
+                android:text="Полуботинки женские 02306W0"
+                android:textSize="16sp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productName" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/productColorsLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="20dp"
+                android:fontFamily="sans-serif"
+                android:text="Другие цвета"
+                android:textColor="@android:color/black"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/productDescription" />
 
             <androidx.appcompat.widget.AppCompatTextView
                 android:id="@+id/productPrice"
@@ -66,7 +133,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
                 app:mock_diagonalsColor="#FFF"
-                app:mock_label="Image" />
+                app:mock_showLabel="false"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/btnBuy"
@@ -86,7 +153,6 @@
                 app:cornerRadius="16dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/image" />
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
