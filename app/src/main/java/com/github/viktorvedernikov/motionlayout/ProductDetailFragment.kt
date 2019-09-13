@@ -22,7 +22,7 @@ class ProductDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         motionLayout = activity?.findViewById<MotionLayout>(R.id.motionLayout)
-        btn?.setOnClickListener {
+        btnBuy?.setOnClickListener {
             if (c == 0) {
                 c = 1
                 motionLayout?.transitionToState(R.id.basketItemShown)
