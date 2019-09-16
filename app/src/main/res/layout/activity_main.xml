@@ -4,27 +4,23 @@
     android:id="@+id/motionLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#666666"
     app:layoutDescription="@xml/scene">
 
     <FrameLayout
         android:id="@+id/topFrame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@android:color/white"
-        android:elevation="2dp" />
+        android:background="@android:color/white" />
 
     <FrameLayout
         android:id="@+id/bottomFrame"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:elevation="2dp" />
+        android:layout_height="match_parent" />
 
     <FrameLayout
         android:id="@+id/basketItem"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:elevation="0dp">
+        android:layout_height="wrap_content">
 
         <View
             android:id="@+id/ivF"
