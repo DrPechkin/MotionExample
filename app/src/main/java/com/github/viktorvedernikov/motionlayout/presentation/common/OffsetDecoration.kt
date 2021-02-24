@@ -1,4 +1,4 @@
-package com.github.viktorvedernikov.motionlayout
+package com.github.viktorvedernikov.motionlayout.presentation.common
 
 import android.graphics.Rect
 import android.view.View

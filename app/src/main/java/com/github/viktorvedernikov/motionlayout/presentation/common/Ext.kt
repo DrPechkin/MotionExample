@@ -1,4 +1,4 @@
-package com.github.viktorvedernikov.motionlayout
+package com.github.viktorvedernikov.motionlayout.presentation.common
 
 import android.content.Context
 import android.util.TypedValue

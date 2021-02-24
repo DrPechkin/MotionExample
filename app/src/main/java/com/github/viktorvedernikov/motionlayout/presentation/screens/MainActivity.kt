@@ -1,4 +1,4 @@
-package com.github.viktorvedernikov.motionlayout
+package com.github.viktorvedernikov.motionlayout.presentation.screens
 
 import android.graphics.Color
 import android.graphics.Outline
@@ -7,6 +7,10 @@ import android.view.View
 import android.view.ViewOutlineProvider
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
+import com.github.viktorvedernikov.motionlayout.R
+import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
+import com.github.viktorvedernikov.motionlayout.presentation.screens.basket.BasketFragment
+import com.github.viktorvedernikov.motionlayout.presentation.screens.product.ProductDetailFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
 

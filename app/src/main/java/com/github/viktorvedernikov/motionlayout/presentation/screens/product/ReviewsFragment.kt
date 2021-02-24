@@ -1,4 +1,4 @@
-package com.github.viktorvedernikov.motionlayout
+package com.github.viktorvedernikov.motionlayout.presentation.screens.product
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,6 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.github.viktorvedernikov.motionlayout.presentation.common.OffsetDecoration
+import com.github.viktorvedernikov.motionlayout.R
+import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
 import kotlinx.android.synthetic.main.fragment_reviews.*
 
 class ReviewsFragment : Fragment() {
