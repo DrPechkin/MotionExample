@@ -6,12 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.github.viktorvedernikov.motionlayout.R
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
 
-class BasketFragment : Fragment() {
+class BasketFragment : BaseFragment() {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_busket, container, false)
+    override val layoutResId: Int = R.layout.fragment_busket
+
 }

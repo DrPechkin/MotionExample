@@ -10,6 +10,8 @@ import androidx.constraintlayout.motion.widget.MotionLayout
 import com.github.viktorvedernikov.motionlayout.R
 import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
 import com.github.viktorvedernikov.motionlayout.presentation.screens.basket.BasketFragment
+import com.github.viktorvedernikov.motionlayout.presentation.screens.containers.BottomContainerFragment
+import com.github.viktorvedernikov.motionlayout.presentation.screens.containers.TopContainerFragment
 import com.github.viktorvedernikov.motionlayout.presentation.screens.product.ProductDetailFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
@@ -72,8 +74,8 @@ class MainActivity : AppCompatActivity(), MotionLayout.TransitionListener {
         motionLayout?.transitionToState(R.id.basketItemHidden)
         if (savedInstanceState == null) {
             supportFragmentManager.beginTransaction()
-                .add(R.id.topFrame, ProductDetailFragment(), "ProductDetailFragment")
-                .add(R.id.bottomFrame, BasketFragment(), "BasketFragment")
+                .add(R.id.topFrame, TopContainerFragment(), "TopFrame")
+                .add(R.id.bottomFrame, BottomContainerFragment(), "BottomFrame")
                 .commit()
         }
     }
