@@ -1,44 +1,29 @@
 package com.github.viktorvedernikov.motionlayout.presentation.screens.product
 
 import android.os.Bundle
-import android.view.LayoutInflater
 import android.view.View
-import android.view.ViewGroup
 import android.widget.TextView
-import androidx.constraintlayout.motion.widget.MotionLayout
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.viktorvedernikov.motionlayout.*
 import com.github.viktorvedernikov.motionlayout.presentation.common.OffsetDecoration
 import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
 import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
+import com.github.viktorvedernikov.motionlayout.presentation.screens.MainActivity
 import kotlinx.android.synthetic.main.fragment_product_detail.*
 
 class ProductDetailFragment : BaseFragment() {
-
-    private var motionLayout: MotionLayout? = null
 
     private val listAdapter by lazy {
         ReviewsAdapter(ReviewsAdapter.Type.COMPONENT)
     }
 
-    var c = 0
-
     override val layoutResId: Int = R.layout.fragment_product_detail
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        motionLayout = activity?.findViewById<MotionLayout>(R.id.motionLayout)
         btnBuy?.setOnClickListener {
-            if (c == 0) {
-                c = 1
-                motionLayout?.transitionToState(R.id.basketItemShown)
-                productDetailMotionLayout?.transitionToEnd()
-            } else {
-                c = 0
-                motionLayout?.transitionToState(R.id.basketItemHidden)
-            }
+            (activity as? MainActivity?)?.toggleBasketItemScene()
         }
         reviewsComponent.findViewById<TextView>(R.id.tvTitle)?.apply {
             text = "Отзывы"

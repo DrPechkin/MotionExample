@@ -63,7 +63,7 @@
 
     </ConstraintSet>
 
-    <ConstraintSet android:id="@+id/basketShown">
+    <ConstraintSet android:id="@+id/bottomContainerShown">
         <Constraint
             android:id="@id/topFrame"
             android:layout_width="match_parent"
@@ -98,7 +98,7 @@
     </ConstraintSet>
 
     <Transition
-        motion:constraintSetEnd="@+id/basketShown"
+        motion:constraintSetEnd="@+id/bottomContainerShown"
         motion:constraintSetStart="@+id/basketItemShown"
         motion:duration="200"
         motion:motionInterpolator="linear">
@@ -113,7 +113,7 @@
 
     <Transition
         motion:constraintSetEnd="@+id/basketItemShown"
-        motion:constraintSetStart="@+id/basketShown"
+        motion:constraintSetStart="@+id/bottomContainerShown"
         motion:duration="200"
         motion:motionInterpolator="linear">
 

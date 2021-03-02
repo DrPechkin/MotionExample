@@ -1,6 +1,7 @@
 package com.github.viktorvedernikov.motionlayout.presentation.screens.containers
 
 import android.os.Bundle
+import android.util.Log
 import android.view.View
 import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
 import com.github.viktorvedernikov.motionlayout.R
@@ -18,5 +19,9 @@ class BottomContainerFragment : BaseFragment() {
                 .add(R.id.bottomContainerFrame, BasketFragment(), "BasketFragment")
                 .commit()
         }
+    }
+
+    override fun onBackPressed() {
+        Log.e("BottomFrame", "onBackPressed")
     }
 }

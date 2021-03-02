@@ -8,11 +8,10 @@ import android.view.ViewOutlineProvider
 import androidx.appcompat.app.AppCompatActivity
 import androidx.constraintlayout.motion.widget.MotionLayout
 import com.github.viktorvedernikov.motionlayout.R
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
 import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
-import com.github.viktorvedernikov.motionlayout.presentation.screens.basket.BasketFragment
 import com.github.viktorvedernikov.motionlayout.presentation.screens.containers.BottomContainerFragment
 import com.github.viktorvedernikov.motionlayout.presentation.screens.containers.TopContainerFragment
-import com.github.viktorvedernikov.motionlayout.presentation.screens.product.ProductDetailFragment
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlin.math.abs
 
@@ -21,6 +20,9 @@ class MainActivity : AppCompatActivity(), MotionLayout.TransitionListener {
     private var lastProgress = 0f
     private var topFrameRadiusCorner = 20f
         get() = dpToPx(field).toFloat()
+
+    private lateinit var topContainerFragment: BaseFragment
+    private lateinit var bottomContainerFragment: BaseFragment
 
     override fun onTransitionTrigger(p0: MotionLayout?, p1: Int, p2: Boolean, p3: Float) {}
     override fun onTransitionStarted(p0: MotionLayout?, p1: Int, p2: Int) {
@@ -54,6 +56,45 @@ class MainActivity : AppCompatActivity(), MotionLayout.TransitionListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        applyOutlineProvider()
+        motionLayout?.setTransitionListener(this)
+        motionLayout?.transitionToState(R.id.basketItemHidden)
+        if (savedInstanceState == null) {
+            supportFragmentManager.beginTransaction()
+                .add(
+                    R.id.topFrame,
+                    TopContainerFragment().also {
+                        topContainerFragment = it
+                    },
+                    "TopFrame"
+                )
+                .add(
+                    R.id.bottomFrame,
+                    BottomContainerFragment().also {
+                        bottomContainerFragment = it
+                    },
+                    "BottomFrame"
+                )
+                .commit()
+        }
+    }
+
+    override fun onBackPressed() {
+        if (motionLayout?.currentState == R.id.bottomContainerShown) {
+            bottomContainerFragment.onBackPressed()
+        } else {
+            topContainerFragment.onBackPressed()
+        }
+    }
+
+    fun toggleBasketItemScene() {
+        if (motionLayout?.currentState == R.id.basketItemShown)
+            motionLayout?.transitionToState(R.id.basketItemHidden)
+        else
+            motionLayout?.transitionToState(R.id.basketItemShown)
+    }
+
+    private fun applyOutlineProvider() {
         topFrame.apply {
             outlineProvider = object : ViewOutlineProvider() {
                 override fun getOutline(view: View?, outline: Outline?) {
@@ -69,22 +110,6 @@ class MainActivity : AppCompatActivity(), MotionLayout.TransitionListener {
                 }
             }
             clipToOutline = true
-        }
-        motionLayout?.setTransitionListener(this)
-        motionLayout?.transitionToState(R.id.basketItemHidden)
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .add(R.id.topFrame, TopContainerFragment(), "TopFrame")
-                .add(R.id.bottomFrame, BottomContainerFragment(), "BottomFrame")
-                .commit()
-        }
-    }
-
-    override fun onBackPressed() {
-        if (motionLayout?.currentState == R.id.basketShown) {
-            motionLayout?.transitionToState(R.id.basketItemShown)
-        } else {
-            super.onBackPressed()
         }
     }
 }
