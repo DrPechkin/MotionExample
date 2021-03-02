@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
 import androidx.fragment.app.Fragment
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.mvi.MviBaseFragment
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.mvi.ViewState
 
 abstract class BaseFragment : Fragment() {
 

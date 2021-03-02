@@ -11,10 +11,11 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.github.viktorvedernikov.motionlayout.*
 import com.github.viktorvedernikov.motionlayout.presentation.common.OffsetDecoration
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
 import com.github.viktorvedernikov.motionlayout.presentation.common.dpToPx
 import kotlinx.android.synthetic.main.fragment_product_detail.*
 
-class ProductDetailFragment : Fragment() {
+class ProductDetailFragment : BaseFragment() {
 
     private var motionLayout: MotionLayout? = null
 
@@ -23,11 +24,8 @@ class ProductDetailFragment : Fragment() {
     }
 
     var c = 0
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? = inflater.inflate(R.layout.fragment_product_detail, container, false)
+
+    override val layoutResId: Int = R.layout.fragment_product_detail
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
