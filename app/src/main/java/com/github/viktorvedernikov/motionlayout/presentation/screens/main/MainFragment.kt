@@ -19,7 +19,7 @@ class MainFragment : BaseFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         btnNext.setOnClickListener {
-            router.navigateTo(Screens.getProductDetail())
+            router.navigateTo(Screens.getCategories())
         }
     }
 }

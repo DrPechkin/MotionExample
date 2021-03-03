@@ -36,4 +36,5 @@ dependencies {
     implementation 'androidx.lifecycle:lifecycle-livedata-ktx:2.3.0'
     implementation 'androidx.lifecycle:lifecycle-viewmodel-ktx:2.3.0'
     implementation 'com.github.terrakok:cicerone:6.6'
+    implementation 'com.arasthel:spannedgridlayoutmanager:3.0.2'
 }
