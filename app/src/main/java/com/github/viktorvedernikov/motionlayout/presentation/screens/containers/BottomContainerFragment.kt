@@ -1,27 +1,26 @@
 package com.github.viktorvedernikov.motionlayout.presentation.screens.containers
 
-import android.os.Bundle
-import android.util.Log
-import android.view.View
-import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.github.viktorvedernikov.motionlayout.R
-import com.github.viktorvedernikov.motionlayout.presentation.screens.basket.BasketFragment
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.FlowFragment
+import com.github.viktorvedernikov.motionlayout.presentation.screens.MainActivity
+import com.github.viktorvedernikov.motionlayout.presentation.screens.Screens
 
-class BottomContainerFragment : BaseFragment() {
+class BottomContainerFragment : FlowFragment() {
 
-    override val layoutResId: Int = R.layout.fragment_bottom_container
+    override val flowName: String
+        get() = "BottomFlow"
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override val layoutResId: Int = R.layout.layout_container
 
-        if (savedInstanceState == null) {
-            childFragmentManager.beginTransaction()
-                .add(R.id.bottomContainerFrame, BasketFragment(), "BasketFragment")
-                .commit()
-        }
-    }
+    override fun getLaunchScreen(): FragmentScreen = Screens.getBasket()
 
     override fun onBackPressed() {
-        Log.e("BottomFrame", "onBackPressed")
+        // [parentFragmentManager.fragments] returns only distinct fragment classes and cannot be used for size counting
+        if (parentFragmentManager.backStackEntryCount > 1) {
+            currentFragment?.onBackPressed() ?: onBackPressed()
+        } else {
+            (activity as MainActivity).toggleBasketItemScene()
+        }
     }
 }

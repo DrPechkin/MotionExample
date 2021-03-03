@@ -1,27 +1,22 @@
 package com.github.viktorvedernikov.motionlayout.presentation.screens.containers
 
-import android.os.Bundle
 import android.util.Log
-import android.view.View
-import com.github.viktorvedernikov.motionlayout.presentation.common.base.BaseFragment
+import com.github.terrakok.cicerone.androidx.FragmentScreen
 import com.github.viktorvedernikov.motionlayout.R
-import com.github.viktorvedernikov.motionlayout.presentation.screens.product.ProductDetailFragment
+import com.github.viktorvedernikov.motionlayout.presentation.common.base.FlowFragment
+import com.github.viktorvedernikov.motionlayout.presentation.screens.Screens
 
-class TopContainerFragment : BaseFragment() {
+class TopContainerFragment : FlowFragment() {
 
-    override val layoutResId: Int = R.layout.fragment_top_container
+    override val flowName: String
+        get() = "TopFrame"
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override val layoutResId: Int = R.layout.layout_container
 
-        if (savedInstanceState == null) {
-            childFragmentManager.beginTransaction()
-                .add(R.id.topContainerFrame, ProductDetailFragment(), "ProductDetailFragment")
-                .commit()
-        }
-    }
+    override fun getLaunchScreen(): FragmentScreen = Screens.getMain()
 
     override fun onBackPressed() {
+        super.onBackPressed()
         Log.e("TopFrame", "onBackPressed")
     }
 }
