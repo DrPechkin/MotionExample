@@ -4,8 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
-import com.arasthel.spannedgridlayoutmanager.SpanSize
-import com.arasthel.spannedgridlayoutmanager.SpannedGridLayoutManager
+import androidx.recyclerview.widget.GridLayoutManager
 import com.github.terrakok.cicerone.Router
 import com.github.viktorvedernikov.motionlayout.R
 import com.github.viktorvedernikov.motionlayout.presentation.common.OffsetDecoration
@@ -47,13 +46,14 @@ class CategoriesFragment : BaseFragment(),
 
     private fun initRecycler() {
         rvCatalog.apply {
-            layoutManager =
-                SpannedGridLayoutManager(SpannedGridLayoutManager.Orientation.VERTICAL, 6).apply {
-                    spanSizeLookup = SpannedGridLayoutManager.SpanSizeLookup {
-                        val banner = (adapter as CategoriesAdapter).currentList[it]
-                        SpanSize(banner.weight, banner.height)
+            layoutManager = GridLayoutManager(context, 6).apply {
+                spanSizeLookup = object  : GridLayoutManager.SpanSizeLookup() {
+                    override fun getSpanSize(position: Int): Int {
+                        val banner = (adapter as CategoriesAdapter).currentList[position]
+                        return banner.weight
                     }
                 }
+            }
             addItemDecoration(
                 OffsetDecoration.Builder()
                     .horizontal(dpToPx(4f))
