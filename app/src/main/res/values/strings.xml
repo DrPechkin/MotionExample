@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">MotionLayout</string>
+
+    <!-- ConfirmPhoneScreen -->
+    <string name="confirm_phone_screen_phone_number">Номер телефона</string>
+    <string name="confirm_phone_screen_license">Продолжая, вы принимаете <font color='#000000'>соглашение</font></string>
+    <string name="confirm_phone_screen_continue">Продолжить</string>
+
+    <!-- ConfirmCodeScreen -->
+    <string name="confirm_code_screen_phone_number">Подтвердите номер</string>
+    <string name="confirm_code_screen_code_was_sent">Код отправлен на %s</string>
+    <string name="confirm_code_screen_request_again">Запросить повторно</string>
+    <string name="confirm_code_screen_request_again_timer">Запросить повторно через %s.</string>
+    <string name="confirm_code_screen_wrong_code">Неверный код</string>
 </resources>
